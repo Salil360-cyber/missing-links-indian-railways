@@ -1,0 +1,6 @@
+# Raw source data is large; download it with the steps in 01_data/README.md
+01_data/raw/
+01_data/clean/schedules_raw.csv
+__pycache__/
+.ipynb_checkpoints/
+~$*

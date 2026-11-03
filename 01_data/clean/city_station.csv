@@ -1,0 +1,668 @@
+city,station_code
+Agra,KBP
+Agra,CHLR
+Agra,PTLI
+Agra,MIQ
+Agra,BHA
+Agra,BCP
+Agra,AGC
+Agra,RKM
+Agra,JAB
+Agra,RNKA
+Agra,BFP
+Agra,AF
+Agra,AGA
+Agra,IDH
+Ahmadabad,ADIJ
+Ahmadabad,CDK
+Ahmadabad,ADI
+Ahmadabad,GGM
+Ahmadabad,MORA
+Ahmadabad,ABD
+Ahmadabad,VTP
+Ahmadabad,KLRD
+Ahmadabad,ASV
+Ahmadabad,CLDB
+Ahmadabad,SBTF
+Ahmadabad,NRD
+Ahmadabad,SBIS
+Ahmadabad,SBIC
+Ahmadabad,SEJ
+Ahmadabad,KKF
+Ahmadabad,SDGM
+Ahmadabad,SBTA
+Ahmadabad,SBID
+Ahmadabad,MAN
+Ahmadabad,SHB
+Ahmadabad,SAHP
+Ahmadabad,SBI
+Ahmadabad,SBT
+Ahmadabad,VTA
+Ahmadabad,GG
+Ahmadabad,GER
+Ahmadabad,CLDY
+Allahabad,IDGJ
+Allahabad,ALD
+Allahabad,SPGL
+Allahabad,BMU
+Allahabad,SFG
+Allahabad,ALY
+Allahabad,LKJN
+Allahabad,PRG
+Allahabad,JI
+Allahabad,NYN
+Allahabad,COI
+Allahabad,DRGJ
+Allahabad,THW
+Allahabad,PFM
+Amritsar,MOW
+Amritsar,CIA
+Amritsar,ASR
+Amritsar,VKA
+Aurangabad,AWB
+Aurangabad,CTH
+Aurangabad,DLB
+Aurangabad,MKDD
+Bengaluru,SBC
+Bengaluru,BLRR
+Bengaluru,CRLM
+Bengaluru,NYH
+Bengaluru,KGI
+Bengaluru,GNB
+Bengaluru,BAW
+Bengaluru,THSA
+Bengaluru,BNCE
+Bengaluru,YPR
+Bengaluru,BNC
+Bengaluru,BAND
+Bengaluru,HEB
+Bengaluru,YNK
+Bengaluru,KDGH
+Bengaluru,LOGH
+Bengaluru,BYPY
+Bengaluru,MWM
+Bengaluru,BYPL
+Bengaluru,CSDR
+Bengaluru,BYPA
+Bengaluru,KJM
+Bhopal,SUW
+Bhopal,NSZ
+Bhopal,HBJ
+Bhopal,BPL
+Bhopal,BIH
+Bhopal,MSO
+Chennai,MBM
+Chennai,MKK
+Chennai,NBK
+Chennai,TMVL
+Chennai,SP
+Chennai,TRMN
+Chennai,PEW
+Chennai,GDY
+Chennai,KOTR
+Chennai,PCW
+Chennai,VLK
+Chennai,STM
+Chennai,PZA
+Chennai,ABU
+Chennai,PRGD
+Chennai,VLCY
+Chennai,PVM
+Chennai,ABEO
+Chennai,BBQ
+Chennai,VJM
+Chennai,VPY
+Chennai,PER
+Chennai,MSC
+Chennai,MAS
+Chennai,KOK
+Chennai,MS
+Chennai,MMCC
+Chennai,MPK
+Chennai,GWYR
+Chennai,KTPM
+Chennai,KTBR
+Chennai,MCPK
+Chennai,TYMR
+Chennai,MCPT
+Chennai,MPKT
+Chennai,MLHS
+Chennai,MNDY
+Chennai,MTMY
+Chennai,MTCN
+Chennai,WCN
+Chennai,TVT
+Chennai,VOC
+Chennai,TNP
+Chennai,MSB
+Chennai,RPM
+Chennai,WST
+Chennai,MSF
+Chennai,KAVM
+Coimbatore,ETMD
+Coimbatore,CBF
+Coimbatore,MDKI
+Coimbatore,PKM
+Coimbatore,CBE
+Coimbatore,PTJ
+Coimbatore,PLMD
+Coimbatore,SHI
+Coimbatore,IGU
+Delhi,NNO
+Delhi,MQC
+Delhi,GHE
+Delhi,BRSQ
+Delhi,DEC
+Delhi,NSN
+Delhi,SDPR
+Delhi,CNKP
+Delhi,PM
+Delhi,DLPI
+Delhi,KRTN
+Delhi,NDLS
+Delhi,CSB
+Delhi,PTNR
+Delhi,NRVR
+Delhi,DSB
+Delhi,KHKN
+Delhi,HUK
+Delhi,BHD
+Delhi,DLI
+Delhi,ANDI
+Delhi,DKZ
+Delhi,DEE
+Delhi,MGLP
+Delhi,SSB
+Delhi,DBSI
+Delhi,SZM
+Delhi,VVKP
+Delhi,NDAZ
+Delhi,DAZ
+Dhanbad,TSAH
+Dhanbad,NPJE
+Dhanbad,TET
+Dhanbad,SJA
+Dhanbad,ANJE
+Dhanbad,KTH
+Dhanbad,MLQ
+Dhanbad,KRKN
+Dhanbad,BZS
+Dhanbad,LYD
+Dhanbad,BZE
+Dhanbad,BHN
+Dhanbad,DOKM
+Dhanbad,BCB
+Dhanbad,SNMY
+Dhanbad,PEH
+Dhanbad,DHN
+Dhanbad,JBO
+Dhanbad,SDBH
+Dhanbad,PBQ
+Dhanbad,VAA
+Dhanbad,KDS
+Dhanbad,PKA
+Dhanbad,RKJE
+Delhi,TKD
+Delhi,FDB
+Delhi,BVH
+Delhi,PYLA
+Delhi,FDN
+Delhi,TKDC
+Greater Hyderabad,NSVP
+Greater Hyderabad,BDVL
+Greater Hyderabad,JOO
+Greater Hyderabad,ATC
+Greater Hyderabad,STPD
+Greater Hyderabad,MLYC
+Greater Hyderabad,LKPL
+Greater Hyderabad,KCG
+Greater Hyderabad,KQD
+Greater Hyderabad,HSJ
+Greater Hyderabad,LGD
+Greater Hyderabad,MLY
+Greater Hyderabad,NLRD
+Greater Hyderabad,NCHS
+Greater Hyderabad,LGDH
+Greater Hyderabad,BMT
+Greater Hyderabad,MJF
+Greater Hyderabad,SJVP
+Greater Hyderabad,JET
+Greater Hyderabad,STDB
+Greater Hyderabad,VAR
+Greater Hyderabad,HYB
+Greater Hyderabad,SC
+Greater Hyderabad,FM
+Greater Hyderabad,YKA
+Greater Hyderabad,MXT
+Greater Hyderabad,HPG
+Greater Hyderabad,DQR
+Greater Hyderabad,BRBD
+Greater Hyderabad,DYE
+Greater Hyderabad,FNB
+Greater Hyderabad,MLYG
+Greater Hyderabad,CHZ
+Greater Hyderabad,SFX
+Greater Hyderabad,SNF
+Greater Hyderabad,RKO
+Greater Hyderabad,HTCY
+Greater Hyderabad,CVB
+Greater Hyderabad,ALW
+Greater Hyderabad,AMQ
+Greater Hyderabad,BTNR
+Greater Mumbai,NHU
+Greater Mumbai,KHAR
+Greater Mumbai,JOS
+Greater Mumbai,BND
+Greater Mumbai,KJMG
+Greater Mumbai,MRU
+Greater Mumbai,VK
+Greater Mumbai,BA
+Greater Mumbai,BCT
+Greater Mumbai,MX
+Greater Mumbai,GC
+Greater Mumbai,DR
+Greater Mumbai,VLP
+Greater Mumbai,STC
+Greater Mumbai,MTN
+Greater Mumbai,GMN
+Greater Mumbai,LTT
+Greater Mumbai,SIN
+Greater Mumbai,CLA
+Greater Mumbai,CRD
+Greater Mumbai,BY
+Greater Mumbai,KILE
+Greater Mumbai,MDD
+Greater Mumbai,MSD
+Greater Mumbai,PR
+Greater Mumbai,ADH
+Greater Mumbai,MM
+Greater Mumbai,VVH
+Greater Mumbai,DDR
+Greater Mumbai,BDTS
+Greater Mumbai,SNRD
+Greater Mumbai,PL
+Greater Mumbai,EPR
+Greater Mumbai,CHG
+Greater Mumbai,MLND
+Gwalior,SLV
+Gwalior,NGON
+Gwalior,MTJL
+Gwalior,BBY
+Gwalior,MIAL
+Gwalior,GWO
+Gwalior,GOPA
+Gwalior,BLNR
+Gwalior,RRU
+Gwalior,GWL
+Gwalior,STLI
+Kolkata,BVA
+Kolkata,NALR
+Kolkata,SYAE
+Kolkata,TLG
+Kolkata,SDAH
+Kolkata,CP
+Kolkata,LKF
+Kolkata,KBGB
+Kolkata,BLN
+Kolkata,BGB
+Kolkata,ABB
+Kolkata,SEL
+Kolkata,MILE
+Kolkata,RMJ
+Kolkata,ADL
+Kolkata,PQS
+Kolkata,HJN
+Kolkata,DHK
+Kolkata,SRC
+Kolkata,NAI
+Kolkata,AKRA
+Kolkata,HWHG
+Kolkata,PDPK
+Kolkata,BRJ
+Kolkata,NACC
+Kolkata,SOLA
+Kolkata,MJT
+Kolkata,BBR
+Kolkata,SSP
+Kolkata,RMTR
+Kolkata,HWH
+Kolkata,MRGM
+Kolkata,KIRP
+Kolkata,BZB
+Kolkata,DSNR
+Kolkata,PPGT
+Kolkata,SHM
+Kolkata,TPKR
+Kolkata,BBDB
+Kolkata,HYG
+Kolkata,EDG
+Kolkata,CCRL
+Kolkata,RCD
+Kolkata,LLH
+Kolkata,BLYG
+Kolkata,BEQ
+Kolkata,BLYH
+Kolkata,CCLW
+Kolkata,BLY
+Kolkata,DAKE
+Kolkata,BZL
+Kolkata,UPA
+Kolkata,DKAE
+Kolkata,GBRA
+Kolkata,HMZ
+Kolkata,KOG
+Kolkata,JOX
+Kolkata,BARN
+Kolkata,TALA
+Kolkata,NKG
+Kolkata,PTKR
+Kolkata,KOAA
+Kolkata,CPY
+Kolkata,BLH
+Kolkata,KGK
+Kolkata,BNXR
+Kolkata,DDJ
+Indore,LKBR
+Indore,PLA
+Indore,RAU
+Indore,RJQ
+Indore,LMNR
+Indore,MGG
+Indore,LKMN
+Indore,INDM
+Indore,INDB
+Indore,SFNR
+Jabalpur,HBG
+Jabalpur,DOE
+Jabalpur,MML
+Jabalpur,JBPN
+Jabalpur,GRG
+Jabalpur,JBP
+Jabalpur,JPV
+Jabalpur,KEQ
+Jabalpur,ADTL
+Jaipur,DKBJ
+Jaipur,KWP
+Jaipur,NDH
+Jaipur,GADJ
+Jaipur,KKU
+Jaipur,GTJT
+Jaipur,SNGN
+Jaipur,BDYK
+Jaipur,BSGD
+Jaipur,JP
+Jaipur,DPA
+Jodhpur,SZ
+Jodhpur,JUCT
+Jodhpur,MMC
+Jodhpur,JU
+Jodhpur,MDB
+Jodhpur,BGKT
+Jodhpur,BANE
+Jodhpur,RKB
+Kanpur,RXM
+Kanpur,SIRA
+Kanpur,CNJO
+Kanpur,CHK
+Kanpur,COP
+Kanpur,CNBI
+Kanpur,HLIN
+Kanpur,BZM
+Kanpur,GMC
+Kanpur,CPNL
+Kanpur,CNB
+Kanpur,CPA
+Kanpur,GOY
+Kanpur,RPO
+Kanpur,CPB
+Kanpur,PNK
+Kanpur,KAP
+Kanpur,MGW
+Kolkata,JDP
+Kolkata,SEP
+Kolkata,AGP
+Kolkata,BGJT
+Kolkata,NGRI
+Kolkata,KAVI
+Kolkata,GIA
+Kolkata,NRPR
+Kolkata,DGNR
+Kolkata,BBT
+Kolkata,DDC
+Kolkata,BRPK
+Kota,CDSL
+Kota,GQL
+Kota,DKNT
+Kota,GQLW
+Kota,GQLN
+Kota,KOTA
+Kota,DEIT
+Kota,KTSC
+Kota,GNCN
+Kota,KCCN
+Kota,SGAC
+Kota,KPTN
+Lucknow,ML
+Lucknow,BKKS
+Lucknow,GTNR
+Lucknow,BHAW
+Lucknow,UTR
+Lucknow,BNZ
+Lucknow,LC
+Lucknow,ASH
+Lucknow,LJN
+Lucknow,DALF
+Lucknow,ASSH
+Lucknow,LBH
+Lucknow,AMG
+Lucknow,DAL
+Lucknow,MKG
+Lucknow,LNWT
+Lucknow,JRR
+Lucknow,LCNC
+Lucknow,AMV
+Lucknow,LKO
+Lucknow,AMS
+Lucknow,MBP
+Ludhiana,BWZ
+Ludhiana,JSL
+Ludhiana,GILL
+Ludhiana,SNL
+Ludhiana,MG
+Ludhiana,DDL
+Ludhiana,BHOI
+Ludhiana,LDH
+Ludhiana,PHR
+Ludhiana,LDW
+Madurai,ILA
+Madurai,TDN
+Madurai,KON
+Madurai,MDU
+Madurai,MES
+Madurai,SER
+Meerut,PQY
+Meerut,MUT
+Meerut,MTC
+Meerut,PRTP
+Meerut,MUZ
+Meerut,DRLA
+Meerut,NRNR
+Meerut,CXA
+Nagpur,BWRA
+Nagpur,NGP
+Nagpur,ITR
+Nagpur,KP
+Nagpur,AJNI
+Nagpur,KRDH
+Nagpur,BNWD
+Nagpur,GNQ
+Nagpur,KRI
+Nagpur,ITRN
+Nagpur,KAV
+Nagpur,NGPB
+Nagpur,MIB
+Nashik,NK
+Nashik,ODHA
+Nashik,DVL
+Greater Mumbai,KLMG
+Greater Mumbai,NVRD
+Greater Mumbai,TPND
+Greater Mumbai,KLMC
+Greater Mumbai,CKHS
+Greater Mumbai,PNVL
+Greater Mumbai,NIIJ
+Patna,DNR
+Patna,PPTA
+Patna,PFT
+Patna,PWS
+Patna,SCY
+Patna,PNUG
+Patna,PRBZ
+Patna,RJPB
+Patna,PPN
+Patna,PNBE
+Patna,BKG
+Patna,DDGJ
+Patna,PNC
+Patna,GZH
+Patna,RSMN
+Patna,JTDM
+Patna,HJP
+Patna,SEE
+Pune,KSWD
+Pune,SVJR
+Pune,KK
+Pune,PUNE
+Pune,DAPD
+Pune,GPRW
+Pune,CCH
+Pune,PMP
+Pune,AKRD
+Pune,BGWI
+Pune,DEHR
+Pune,BGW
+Pune,SLRW
+Pune,GRWD
+Pune,MJBK
+Pune,HDP
+Pune,SSV
+Pune,GIT
+Pune,GPR
+Raipur,BOV
+Raipur,SB04
+Raipur,R
+Raipur,SZB
+Raipur,KMI
+Raipur,CABN
+Raipur,SRWN
+Raipur,TBD
+Raipur,RVH
+Raipur,WRC
+Raipur,URK
+Raipur,MDH
+Rajkot,BKNG
+Rajkot,KHDI
+Rajkot,BLWR
+Rajkot,KHC
+Rajkot,RJT
+Rajkot,RKY
+Ranchi,AOR
+Ranchi,HTE
+Ranchi,BLRG
+Ranchi,TIS
+Ranchi,NKM
+Ranchi,PIS
+Ranchi,RNC
+Surat,UDN
+Surat,URN
+Surat,SCH
+Surat,GTX
+Surat,ST
+Surat,BHET
+Surat,KSE
+Surat,NOL
+Surat,CHM
+Greater Mumbai,KARD
+Greater Mumbai,BVI
+Greater Mumbai,MIRA
+Greater Mumbai,DIC
+Greater Mumbai,DWJN
+Greater Mumbai,MBQ
+Greater Mumbai,DTVL
+Greater Mumbai,DIVA
+Greater Mumbai,TNA
+Greater Mumbai,DCTL
+Greater Mumbai,KLVA
+Greater Mumbai,THK
+Greater Mumbai,KOPR
+Greater Mumbai,DI
+Greater Mumbai,UBCN
+Greater Mumbai,BIRD
+Greater Mumbai,KHBV
+Vadodara,VRM
+Vadodara,MPR
+Vadodara,KDHL
+Vadodara,BRGZ
+Vadodara,BRGY
+Vadodara,KEP
+Vadodara,KRCA
+Vadodara,RNO
+Vadodara,VS
+Vadodara,BRC
+Vadodara,PIO
+Vadodara,BALI
+Vadodara,PDRA
+Vadodara,BJW
+Vadodara,CYI
+Vadodara,PRTN
+Vadodara,BDA
+Varanasi,RTB
+Varanasi,JEP
+Varanasi,NEWC
+Varanasi,BHBV
+Varanasi,ARW
+Varanasi,HDT
+Varanasi,BHLP
+Varanasi,MUV
+Varanasi,VYN
+Varanasi,BBRM
+Varanasi,LOT
+Varanasi,BSBY
+Varanasi,BSB
+Varanasi,KEI
+Varanasi,BCY
+Varanasi,SOP
+Varanasi,CHH
+Varanasi,SRNT
+Varanasi,BRPT
+Greater Mumbai,NIG
+Greater Mumbai,NSP
+Greater Mumbai,JCNR
+Greater Mumbai,VTN
+Greater Mumbai,VR
+Greater Mumbai,BYR
+Greater Mumbai,BSR
+Vijayawada,MDUN
+Vijayawada,CLVR
+Vijayawada,PVD
+Vijayawada,RYP
+Vijayawada,BZA
+Vijayawada,KAQ
+Vijayawada,VNEC
+Vijayawada,MAG
+Vijayawada,NWBV
+Vijayawada,KCC
+Vijayawada,NDM
+Vijayawada,GALA
+Vijayawada,RMV
+Vijayawada,STPM
+Vijayawada,MBD
+Vijayawada,UPL
+Visakhapatnam,PDT
+Visakhapatnam,DVD
+Visakhapatnam,WAT
+Visakhapatnam,SCM
+Visakhapatnam,MIPM
+Visakhapatnam,VSKP
+Visakhapatnam,GPT
+Visakhapatnam,SCMN

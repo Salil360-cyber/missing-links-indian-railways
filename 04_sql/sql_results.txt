@@ -1,0 +1,125 @@
+ code |      name       |     state      | zone | trains_halting 
+------+-----------------+----------------+------+----------------
+ CNB  | Kanpur Central  | Uttar Pradesh  | NCR  |            286
+ HWH  | Howrah Jn       | West Bengal    | SER  |            283
+ BZA  | Vijayawada Jn   | Andhra Pradesh | SCR  |            259
+ BRC  | Vadodara Jn     | Gujarat        | WR   |            242
+ ET   | Itarsi Jn       | Madhya Pradesh | WCR  |            238
+ ADI  | Ahmedabad Jn    | Gujarat        | WR   |            236
+ MGS  | Mughal Sarai Jn | Uttar Pradesh  | NER  |            233
+ LKO  | Lucknow         | Uttar Pradesh  | NER  |            230
+ NDLS | New Delhi       | Delhi NCT      | NR   |            229
+ SC   | Secunderabad Jn | Andhra Pradesh | SCR  |            225
+ BPL  | Bhopal Jn       |                |      |            222
+ NGP  | Nagpur          | Maharashtra    | SECR |            221
+ JHS  | Jhansi Jn       | Uttar Pradesh  | NCR  |            220
+ KYN  | Kalyan Jn       | Maharashtra    | CR   |            218
+ ST   | Surat           | Gujarat        | WR   |            218
+ ASN  | Asansol Jn      | West Bengal    | SER  |            217
+ PNBE | Patna Jn        | Bihar          | ECR  |            215
+ BSL  | Bhusaval Jn     | Maharashtra    | CR   |            214
+ ALD  | Allahabad Jn    | Uttar Pradesh  | NER  |            212
+ BSB  | Varanasi Jn     | Uttar Pradesh  | NER  |            211
+(20 rows)
+
+ zone | trains | avg_km | median_kmph | premium_pct 
+------+--------+--------+-------------+-------------
+ SER  |    251 |    755 |        50.8 |         3.2
+ ECoR |    120 |    979 |        50.0 |         6.7
+ CR   |    359 |    716 |        48.0 |         1.4
+ ER   |    369 |    586 |        43.7 |         3.3
+ NWR  |    232 |    549 |        43.6 |         0.0
+ SWR  |    227 |    664 |        42.9 |         0.9
+ WCR  |     74 |    385 |        42.8 |         0.0
+ SR   |    606 |    610 |        42.0 |         1.2
+ WR   |    470 |    602 |        42.0 |         3.0
+ NFR  |    219 |    910 |        41.7 |         0.0
+ NR   |    628 |    534 |        39.4 |         9.7
+ NCR  |    135 |    290 |        37.9 |         3.0
+ SCR  |    437 |    412 |        37.6 |         0.9
+ SECR |    118 |    430 |        35.8 |         0.0
+ NER  |    394 |    371 |        33.1 |         0.0
+ ECR  |    258 |    403 |        31.7 |         0.8
+ ?    |    275 |     94 |        30.3 |         0.0
+(17 rows)
+
+    category    |   type_name    | trains | p25_kmph | median_kmph | p75_kmph 
+----------------+----------------+--------+----------+-------------+----------
+ Premium        | Duronto        |     48 |     67.3 |        74.4 |     76.9
+ Premium        | Rajdhani       |     48 |     67.4 |        74.3 |     77.2
+ Premium        | Shatabdi       |     31 |     68.3 |        72.4 |     73.6
+ Mail/Express   | Sampark Kranti |     42 |     57.1 |        61.2 |     63.6
+ Mail/Express   | Garib Rath     |     52 |     52.9 |        57.4 |     61.9
+ Mail/Express   | Superfast      |    719 |     55.4 |        56.8 |     59.7
+ Mail/Express   | Jan Shatabdi   |     40 |     54.2 |        56.7 |     63.7
+ Mail/Express   | Express        |   1288 |     42.8 |        47.0 |     50.7
+ Mail/Express   | Mail           |     19 |     41.6 |        44.4 |     48.5
+ Suburban/Local | Kolkata EMU    |      3 |     39.8 |        41.0 |     41.4
+ Suburban/Local | MEMU           |    296 |     30.0 |        36.0 |     40.5
+ Suburban/Local | DEMU           |      4 |     32.3 |        33.5 |     33.9
+ Passenger      | Passenger      |   2433 |     27.8 |        33.2 |     38.4
+ Suburban/Local | Hyderabad MMTS |    121 |     27.8 |        29.6 |     37.5
+ Suburban/Local | Delhi EMU      |      8 |     24.4 |        25.6 |     28.0
+ Heritage       | Toy train      |     13 |     10.5 |        13.3 |     65.7
+(16 rows)
+
+   number   |              name              | type_name | from_station_name | to_station_name | distance | kmph 
+------------+--------------------------------+-----------+-------------------+-----------------+----------+------
+ 18235      | Bilaspur Express Cum Passenger | Express   | BHOPAL JN         | BILASPUR JN     |      717 | 32.5
+ 14265-Slip | Varanasi-Ramnagar Express Slip | Express   | VARANASI JN       | RAMNAGAR        |      705 | 32.5
+ 18236      | Bilaspur Express Cum Passenger | Express   | BILASPUR JN       | BHOPAL JN       |      717 | 32.8
+ 13134      | Varanasi- Sealdah Express      | Express   | VARANASI JN       | KOLKATA SEALDAH |      871 | 33.2
+ 18181      | Tata-Chapra Express            | Express   | TATANAGAR JN      | CHHAPRA         |      636 | 33.9
+ 18192      | Utsarg Express                 | Express   | KANPUR ANWARGANJ  | CHHAPRA         |      549 | 34.0
+ 13164      | Hatey Bazare Express           | Express   | SAHARSA JN        | KOLKATA SEALDAH |      589 | 34.8
+ 13039      | Howrah-Rajgir Express Slip     | Express   | HOWRAH JN         | Rajgir          |      552 | 34.9
+ 15028      | Maurya Express                 | Express   | GORAKHPUR JN      | HATIA           |      864 | 34.9
+ 15027      | Maurya Express                 | Express   | HATIA             | GORAKHPUR JN    |      857 | 35.3
+ 13245      | Capital Express                | Express   | NEW JALPAIGURI    | DANAPUR         |      501 | 35.4
+ 13246      | Capital Express                | Express   | DANAPUR           | NEW JALPAIGURI  |      501 | 35.6
+ 18182      | Chhapra-Tata Express           | Express   | CHHAPRA           | TATANAGAR JN    |      636 | 35.7
+ 13133      | Sealdah-Varanasi Express       | Express   | KOLKATA SEALDAH   | VARANASI JN     |      871 | 35.7
+ 14724      | Kalindi Express                | Express   | Bhiwani           | KANPUR CENTRAL  |      605 | 35.8
+ 18181-Slip | Tata-Chapra Express Slip       | Express   | TATANAGAR JN      | KATIHAR JN      |      600 | 35.8
+ 12343-Slip | Darjeeling Mail Slip           | Mail      | KOLKATA SEALDAH   | HALDIBARI       |      624 | 36.0
+ 18447-Slip | Hirakhand Express Slip         | Express   | BHUBANESWAR       | Kirandul        |      935 | 36.3
+ 14236      | Bareilly Varanasi Express      | Express   | BAREILLY          | VARANASI JN     |      559 | 36.5
+ 14723      | Kalindi Express                | Express   | KANPUR CENTRAL    | Bhiwani         |      605 | 36.5
+ 13106      | Ballia-Sealdah Express         | Express   | BALLIA            | KOLKATA SEALDAH |      679 | 36.5
+ 13163      | Hatey Bazare Express           | Express   | KOLKATA SEALDAH   | SAHARSA JN      |      589 | 36.6
+ 17226-Slip | Amaravathi Express Slip        | Express   | HUBLI JN          | KACHEGUDA       |      617 | 36.8
+ 15008      | Krishak Express                | Express   | LUCKNOW JN        | MANDUADIH       |      513 | 36.9
+ 24370      | Triveni Express                | Express   | BAREILLY          | Shakti Nagar    |      741 | 37.4
+(25 rows)
+
+    category    | halts_per_100km | avg_kmph 
+----------------+-----------------+----------
+ Suburban/Local |            25.2 |     39.0
+ Passenger      |            13.2 |     34.2
+ Mail/Express   |             3.1 |     50.9
+ Unknown        |             2.7 |         
+ Premium        |             0.7 |     72.1
+(5 rows)
+
+      state       | stations_served | avg_trains_per_station | intensity_rank 
+------------------+-----------------+------------------------+----------------
+ Kerala           |             133 |                   21.6 |              1
+ Andhra Pradesh   |             338 |                   19.0 |              2
+ Tamil Nadu       |             394 |                   17.5 |              3
+ Bihar            |             417 |                   16.4 |              4
+ Jharkhand        |             169 |                   15.0 |              5
+ West Bengal      |             493 |                   14.9 |              6
+ Haryana          |             144 |                   14.8 |              7
+ Maharashtra      |             471 |                   14.8 |              8
+ Uttar Pradesh    |             916 |                   14.4 |              9
+ Karnataka        |             312 |                   13.5 |             10
+ Madhya Pradesh   |             369 |                   13.0 |             11
+ Gujarat          |             477 |                   11.4 |             12
+ Punjab           |             226 |                   10.9 |             13
+ Orissa           |             120 |                   10.0 |             14
+ Chhattisgarh     |              83 |                    9.2 |             15
+ Himachal Pradesh |              52 |                    9.1 |             16
+ Rajasthan        |             505 |                    8.7 |             17
+ Assam            |             211 |                    7.2 |             18
+(18 rows)
+
