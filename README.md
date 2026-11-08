@@ -2,6 +2,8 @@
 
 **Where does India most need faster direct trains?** An end-to-end analysis of the Indian Railways timetable using Python, SQL, Excel, Power BI and Tableau.
 
+**[Open the interactive explorer](https://salil360-cyber.github.io/missing-links-indian-railways/)**: pick any city to see its fast, slow and missing connections, and re-weight the opportunity score.
+
 ![Missing links map](07_findings/charts/01_missing_links_map.png)
 
 ## Key findings (timetable snapshot, around 2016)
@@ -60,6 +62,7 @@ psql -d railways -f 04_sql/01_schema.sql && psql -d railways -f 04_sql/02_analys
 | `03_excel/` | Train-type lookup used by `clean.py` |
 | `04_sql/` | PostgreSQL schema, 6 analysis queries and their output (`sql_results.txt`) |
 | `07_findings/charts/` | Report charts |
+| `docs/` | Interactive explorer (GitHub Pages), built by `02_python/build_explorer.py` |
 
 ## Tools
 Python (pandas, NetworkX, scikit-learn) · PostgreSQL · Excel · Power BI and Tableau (in progress)

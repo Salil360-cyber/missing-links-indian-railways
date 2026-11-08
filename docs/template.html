@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Missing Links Explorer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* Layout: a planner's desk; the network map on the left, the corridor list it drives on the right */
+:root {
+  --bg: #f5f3ee; --panel: #ffffff; --ink: #1f1d1a; --muted: #67625a; --line: #e0dbd1; --soft: #efebe3;
+  --accent: #1f5fa8; --gap: #c8361f; --slow: #e08a1e; --ok: #2f8f6b; --dot: #cfc8bb; --none: #8d877d;
+  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --body: "IBM Plex Sans", "Segoe UI", Roboto, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root {
+  --bg: #13120f; --panel: #1b1a16; --ink: #ece8e0; --muted: #a39d92; --line: #312e27; --soft: #24221d;
+  --accent: #6aa5ec; --gap: #f06a52; --slow: #f0a84a; --ok: #4cc79a; --dot: #3a362e; --none: #7b766c; color-scheme: dark } }
+* { box-sizing: border-box }
+html, body { margin: 0 }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.55 }
+.wrap { max-width: 1160px; margin: 0 auto; padding-block: 36px 56px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 22px }
+h1, h2 { font-family: var(--display); margin: 0; text-wrap: balance; letter-spacing: -0.01em }
+h1 { font-size: clamp(30px, 5vw, 46px); font-weight: 800; line-height: 1.05 }
+h2 { font-size: 20px; font-weight: 700 }
+p { margin: 0; max-width: 70ch }
+.eyebrow { font: 500 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted) }
+.lede { color: var(--muted); font-size: 16px }
+header { display: grid; gap: 12px }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: var(--line);
+  border: 1px solid var(--line); border-radius: 10px; overflow: hidden; margin-top: 6px }
+.fact { background: var(--panel); padding: 13px 16px; display: grid; gap: 2px }
+.fact b { font: 600 21px/1.2 var(--mono); font-variant-numeric: tabular-nums }
+.fact span { font-size: 12.5px; color: var(--muted) }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px; display: grid; gap: 16px; min-width: 0 }
+.head { display: grid; gap: 6px } .head p { color: var(--muted) }
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 22px; align-items: start }
+@media (max-width: 900px) { .split { grid-template-columns: minmax(0, 1fr) } }
+.controls { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) }
+label.f { display: grid; gap: 5px; font-size: 13px; color: var(--muted) }
+label.f b { font: 600 13px var(--mono); color: var(--ink) }
+select, input[type=range] { width: 100%; font: 500 14px var(--body); color: var(--ink) }
+select { padding: 8px 10px; border-radius: 7px; border: 1px solid var(--line); background: var(--panel) }
+input[type=range] { accent-color: var(--accent) }
+.toggle { display: flex; gap: 8px; align-items: center; font-size: 13.5px }
+.toggle input { width: 17px; height: 17px; accent-color: var(--accent); margin: 0 }
+button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }
+.mapbox { border: 1px solid var(--line); border-radius: 10px; background: var(--bg); padding: 6px }
+svg.map { width: 100%; height: auto; display: block }
+svg.map .dot { fill: var(--dot) }
+svg.map .city { fill: var(--panel); stroke: var(--ink); stroke-width: 1.2; cursor: pointer }
+svg.map .city.sel { fill: var(--accent); stroke: var(--accent) }
+svg.map .city.dim { opacity: .35 }
+svg.map text { font: 600 10.5px var(--body); fill: var(--ink); paint-order: stroke; stroke: var(--bg); stroke-width: 3px; pointer-events: none }
+.legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted); margin-top: 8px }
+.legend i { display: inline-block; width: 18px; height: 0; border-top: 3px solid; vertical-align: middle; margin-right: 6px }
+.legend i.dash { border-top-style: dashed }
+.weights { display: grid; gap: 10px; grid-template-columns: repeat(3, minmax(0, 1fr)) }
+@media (max-width: 560px) { .weights { grid-template-columns: minmax(0, 1fr) } }
+.mix { font: 500 12.5px var(--mono); color: var(--muted) }
+.tbl { overflow-x: auto }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; font-variant-numeric: tabular-nums }
+th, td { text-align: right; padding: 7px 6px; border-bottom: 1px solid var(--line); white-space: nowrap }
+th { font: 500 11px var(--mono); text-transform: uppercase; letter-spacing: .05em; color: var(--muted) }
+th:nth-child(2), td:nth-child(2) { text-align: left; white-space: normal; min-width: 150px }
+tbody tr { cursor: pointer } tbody tr:hover { background: var(--soft) }
+tr.hl { background: var(--soft) }
+.pill { display: inline-block; font: 600 11px var(--mono); padding: 2px 7px; border-radius: 99px; color: #fff }
+.pill.gap { background: var(--gap) } .pill.slow { background: var(--slow) } .pill.ok { background: var(--ok) } .pill.none { background: var(--none) }
+.verdict { font-size: 14.5px; padding: 11px 14px; border-radius: 8px; background: var(--soft); border-left: 3px solid var(--accent) }
+.note { font-size: 13px; color: var(--muted) }
+footer { font-size: 13px; color: var(--muted); display: grid; gap: 6px }
+a { color: var(--accent) }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Indian Railways · corridor gap study</div>
+    <h1>Missing Links</h1>
+    <p class="lede">Every pair of 10 lakh+ cities 200–800 km apart, checked against the Indian Railways timetable. Pick a city to see where it has fast trains, slow trains or no direct train at all, and change the weights to re-rank where new or faster services matter most.</p>
+    <div class="facts" id="facts"></div>
+  </header>
+
+  <section class="panel" aria-labelledby="h1x">
+    <div class="head">
+      <div class="eyebrow">Explore</div>
+      <h2 id="h1x">Which big-city pairs are badly connected?</h2>
+    </div>
+    <div class="controls">
+      <label class="f" for="city">City
+        <select id="city"></select></label>
+      <label class="f" for="topn">Corridors shown on the map: <b id="topnv"></b>
+        <input type="range" id="topn" min="5" max="40" step="1" value="12"></label>
+      <label class="toggle" for="gaponly"><input type="checkbox" id="gaponly"> Only pairs with no direct train</label>
+    </div>
+    <div class="split">
+      <div>
+        <div class="mapbox"><svg class="map" id="map" viewBox="0 0 520 560" role="img" aria-label="Map of city pairs"></svg></div>
+        <div class="legend"><span><i style="border-color:var(--gap)" class="dash"></i>No direct train</span><span><i style="border-color:var(--slow)"></i>Direct, under 60 km/h</span><span><i style="border-color:var(--ok)"></i>Direct, 60 km/h or faster</span><span><i style="border-color:var(--none)" class="dash"></i>No track in 2016</span></div>
+      </div>
+      <div style="display:grid;gap:12px;min-width:0">
+        <div class="verdict" id="verdict"></div>
+        <div class="tbl"><table id="tbl"></table></div>
+        <p class="note">Speed = straight-line distance ÷ fastest scheduled time, so it is conservative. Direct trains = scheduled services in both directions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" aria-labelledby="h2x">
+    <div class="head">
+      <div class="eyebrow">Re-rank</div>
+      <h2 id="h2x">What should count most?</h2>
+      <p>The opportunity score mixes three parts, each scaled 0–1: <b>demand</b> (bigger cities closer together), <b>speed gap</b> (how far the fastest train is below 90 km/h) and <b>frequency gap</b> (how few direct trains run). The study used 50 / 30 / 20. Move the sliders and the map and table re-rank.</p>
+    </div>
+    <div class="weights">
+      <label class="f" for="wd">Demand <b id="wdv"></b><input type="range" id="wd" min="0" max="10" step="1" value="5"></label>
+      <label class="f" for="ws">Speed gap <b id="wsv"></b><input type="range" id="ws" min="0" max="10" step="1" value="3"></label>
+      <label class="f" for="wf">Frequency gap <b id="wfv"></b><input type="range" id="wf" min="0" max="10" step="1" value="2"></label>
+    </div>
+    <div class="mix" id="mix"></div>
+  </section>
+
+  <footer>
+    <div>Data: Datameet Indian Railways timetable (around 2016) and Census 2011 city populations; satellite cities are merged into their metro. Pairs to Srinagar had no rail link in 2016, so they need new track rather than a new train and are not ranked.</div>
+    <div>Code, SQL and charts: <a href="https://github.com/Salil360-cyber/missing-links-indian-railways" target="_blank" rel="noopener">github.com/Salil360-cyber/missing-links-indian-railways</a> · Salil Gokhale</div>
+  </footer>
+</div>
+
+<script>
+const D = __DATA__;
+const $ = id => document.getElementById(id);
+const fmt = n => Math.round(n).toLocaleString("en-IN");
+const P = D.pairs.map(r => ({ a: r[0], b: r[1], km: r[2], n: r[3], min: r[4], sp: r[5], track: r[6], dem: r[7], sg: r[8], fg: r[9] }));
+P.forEach(p => p.status = !p.track ? "none" : p.n === 0 ? "gap" : p.sp < 60 ? "slow" : "ok");
+const LBL = { gap: "No train", slow: "Slow", ok: "Fast", none: "No track" };
+const hm = m => m == null ? "–" : Math.floor(m / 60) + "h " + String(m % 60).padStart(2, "0");
+
+$("facts").innerHTML = [[Object.keys(D.cities).length, "cities with 10 lakh+ people"], [P.length, "city pairs 200–800 km apart"],
+  [P.filter(p => p.status === "gap").length, "pairs with track but no direct train"], [P.filter(p => p.status === "slow").length, "pairs whose fastest train is under 60 km/h"]]
+  .map(([b, s]) => `<div class="fact"><b>${b}</b><span>${s}</span></div>`).join("");
+
+const names = Object.keys(D.cities).sort();
+$("city").innerHTML = `<option value="">All cities: top opportunities</option>` + names.map(c => `<option>${c}</option>`).join("");
+
+// map projection: equirectangular, corrected for latitude
+const LON0 = 67.5, LON1 = 97.8, LAT0 = 6.5, LAT1 = 37.3, W = 520, H = 560, K = Math.cos(22 * Math.PI / 180);
+const sx = (W - 20) / ((LON1 - LON0) * K), sy = (H - 20) / (LAT1 - LAT0), s = Math.min(sx, sy);
+const X = lon => 10 + (lon - LON0) * K * s, Y = lat => 10 + (LAT1 - lat) * s;
+const NS = "http://www.w3.org/2000/svg";
+const el = (t, a, p) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); p && p.appendChild(e); return e; };
+const svg = $("map");
+const bg = el("g", {}, svg), lines = el("g", {}, svg), nodes = el("g", {}, svg), labels = el("g", {}, svg);
+let dpath = ""; for (let i = 0; i < D.dots.length; i += 2) dpath += `M${X(D.dots[i + 1]).toFixed(1)},${Y(D.dots[i]).toFixed(1)}h0.01`;
+el("path", { d: dpath, stroke: "var(--dot)", "stroke-width": 2.2, "stroke-linecap": "round", fill: "none" }, bg);
+
+let W8 = { d: 5, s: 3, f: 2 }, hl = null;
+const score = p => { const t = W8.d + W8.s + W8.f; return t ? (W8.d * p.dem + W8.s * p.sg + W8.f * p.fg) / t : 0; };
+
+function view() {
+  const city = $("city").value, gapOnly = $("gaponly").checked, n = +$("topn").value;
+  P.forEach(p => p.sc = p.track ? score(p) : -1);
+  let list = P.filter(p => !gapOnly || p.status === "gap");
+  if (city) list = list.filter(p => p.a === city || p.b === city);
+  list.sort((x, y) => y.sc - x.sc);
+  const ranked = P.filter(p => p.track).sort((x, y) => y.sc - x.sc); ranked.forEach((p, i) => p.rank = i + 1);
+  return city ? list : list.slice(0, n);
+}
+
+function render() {
+  $("topnv").textContent = $("topn").value; $("topn").disabled = !!$("city").value;
+  const t = W8.d + W8.s + W8.f || 1;
+  ["d", "s", "f"].forEach(k => $("w" + k + "v").textContent = Math.round(W8[k] / t * 100) + "%");
+  $("mix").textContent = (W8.d === 5 && W8.s === 3 && W8.f === 2) ? "Study weights (50 / 30 / 20)." : "Custom weights: rank numbers below use these weights.";
+  const city = $("city").value, list = view();
+  // lines
+  lines.innerHTML = ""; const col = { gap: "var(--gap)", slow: "var(--slow)", ok: "var(--ok)", none: "var(--none)" };
+  list.slice().reverse().forEach(p => { const A = D.cities[p.a], B = D.cities[p.b];
+    el("line", { x1: X(A[3]), y1: Y(A[2]), x2: X(B[3]), y2: Y(B[2]), stroke: col[p.status],
+      "stroke-width": hl === p ? 4.5 : 2.4, "stroke-dasharray": (p.status === "gap" || p.status === "none") ? "6 4" : "",
+      "stroke-linecap": "round", opacity: hl && hl !== p ? .35 : .9 }, lines); });
+  // cities
+  const used = new Set(list.flatMap(p => [p.a, p.b]));
+  nodes.innerHTML = ""; labels.innerHTML = "";
+  names.forEach(c => { const v = D.cities[c], r = 2.6 + Math.sqrt(v[1] / 1e6) * 1.6;
+    const cl = "city" + (c === city ? " sel" : "") + (used.has(c) || !list.length ? "" : " dim");
+    const n = el("circle", { cx: X(v[3]), cy: Y(v[2]), r: r.toFixed(1), class: cl, tabindex: 0, role: "button", "aria-label": c }, nodes);
+    const tt = el("title", {}, n); tt.textContent = `${c}, ${v[0]} · ${fmt(v[1])} people`;
+    n.addEventListener("click", () => { $("city").value = c === city ? "" : c; hl = null; render(); });
+    n.addEventListener("keydown", e => { if (e.key === "Enter") n.dispatchEvent(new Event("click")); });
+    if (used.has(c) && (c === city || !city)) el("text", { x: X(v[3]) + r + 3, y: Y(v[2]) + 3.5 }, labels).textContent = c.replace("Greater ", "");
+  });
+  if (city) list.forEach(p => { const o = p.a === city ? p.b : p.a, v = D.cities[o];
+    el("text", { x: X(v[3]) + 6, y: Y(v[2]) + 3.5 }, labels).textContent = o.replace("Greater ", ""); });
+  // table
+  $("tbl").innerHTML = `<thead><tr><th>Rank</th><th>Pair</th><th>Air km</th><th>Trains</th><th>Fastest</th><th>Speed</th><th>Status</th></tr></thead><tbody>` +
+    list.map((p, i) => `<tr data-i="${P.indexOf(p)}" class="${hl === p ? "hl" : ""}"><td>${p.track ? p.rank : "–"}</td><td>${p.a.replace("Greater ", "")} – ${p.b.replace("Greater ", "")}</td><td>${fmt(p.km)}</td><td>${p.n}</td><td>${hm(p.min)}</td><td>${p.sp == null ? "–" : p.sp + " km/h"}</td><td><span class="pill ${p.status}">${LBL[p.status]}</span></td></tr>`).join("") + "</tbody>";
+  $("tbl").querySelectorAll("tbody tr").forEach(tr => tr.addEventListener("click", () => { const p = P[+tr.dataset.i]; hl = hl === p ? null : p; render(); }));
+  // verdict
+  const v = $("verdict");
+  if (city) { const c = { gap: 0, slow: 0, ok: 0, none: 0 }; list.forEach(p => c[p.status]++);
+    const best = list.find(p => p.track);
+    v.textContent = `${city.replace("Greater ", "")} has ${list.length} partner cities 200–800 km away: ${c.ok} with a direct train at 60 km/h or more, ${c.slow} slow, ${c.gap} with no direct train` + (c.none ? `, ${c.none} with no track` : "") + "." + (best ? ` Its top opportunity is ${best.a === city ? best.b : best.a} (rank ${best.rank} of 268).` : ""); }
+  else { const g = list.filter(p => p.status === "gap").length;
+    v.textContent = `Top ${list.length} corridors by opportunity score: ${g} have no direct train at all. Click a city on the map or a row in the table to focus on it.`; }
+}
+["city", "topn", "gaponly"].forEach(id => $(id).addEventListener(id === "topn" ? "input" : "change", () => { hl = null; render(); }));
+["d", "s", "f"].forEach(k => $("w" + k).addEventListener("input", e => { W8[k] = +e.target.value; render(); }));
+render();
+</script>
+</body>
+</html>
